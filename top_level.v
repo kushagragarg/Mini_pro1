@@ -3,11 +3,11 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:   
-// Design Name: 
-// Module Name:    top_level 
-// Project Name: 
-// Target Devices: 
+// Create Date:   	30 Jan 2014
+// Design Name: 	SPART
+// Module Name:    	top_level 
+// Project Name: 	
+// Target Devices: 	Xilinx Virtex 5
 // Tool versions: 
 // Description: 
 //
@@ -16,7 +16,7 @@
 // Revision: 
 // Revision 0.01 - File Created
 // Additional Comments: 
-//
+// No Change in this module. Default code.
 //////////////////////////////////////////////////////////////////////////////////
 module top_level(
     input clk,         // 100mhz clock
@@ -34,28 +34,28 @@ module top_level(
 	wire [7:0] databus;
 	
 	// Instantiate your SPART here
-	spart spart0( .clk(clk),
-                 .rst(rst),
-					  .iocs(iocs),
-					  .iorw(iorw),
-					  .rda(rda),
-					  .tbr(tbr),
-					  .ioaddr(ioaddr),
-					  .databus(databus),
-					  .txd(txd),
-					  .rxd(rxd),
+	spart spart0(	.clk(clk),
+					.rst(rst),
+					.iocs(iocs),
+					.iorw(iorw),
+					.rda(rda),
+					.tbr(tbr),
+					.ioaddr(ioaddr),
+					.databus(databus),
+					.txd(txd),
+					.rxd(rxd),
 					);
 
 	// Instantiate your driver here
 	driver driver0( .clk(clk),
 	                .rst(rst),
-						 .br_cfg(br_cfg),
-						 .iocs(iocs),
-						 .iorw(iorw),
-						 .rda(rda),
-						 .tbr(tbr),
-						 .ioaddr(ioaddr),
-						 .databus(databus)
+					.br_cfg(br_cfg),
+					.iocs(iocs),
+					.iorw(iorw),
+					.rda(rda),
+					.tbr(tbr),
+					.ioaddr(ioaddr),
+					.databus(databus)
 					 );
 					 
 endmodule
