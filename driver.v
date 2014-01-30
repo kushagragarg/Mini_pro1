@@ -60,29 +60,29 @@ always @ (*) begin
 	BRG_CGF_325:
 	//if (br_cfg == 2'b00)
 	begin	// Div - 325
-	assign div_low =  8'h45;
-	assign div_high = 8'h01;
+	div_low <=  8'h45;
+	div_high <= 8'h01;
 	end
 	
 	BRG_CGF_162:
 //	else if (br_cfg == 2'b01)
 	begin	// Div - 162
-	assign div_low =  8'hA2;
-	assign div_high = 8'h00;
+	div_low <=  8'hA2;
+	div_high <= 8'h00;
 	end
 	
 	BRG_CGF_81:	
 //	else if (br_cfg == 2'b10)
 	begin	// Div - 81
-	assign div_low =  8'h51;
-	assign div_high = 8'h00;
+	div_low <=  8'h51;
+	div_high <= 8'h00;
 	end
 	
 	BRG_CGF_40:
 //	else if (br_cfg == 3)
 	begin	// Div - 40
-	assign div_low =  8'h28;
-	assign div_high = 8'h00;
+	div_low <=  8'h28;
+	div_high <= 8'h00;
 	end
 	
 	//end
