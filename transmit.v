@@ -90,7 +90,7 @@ else if (cnt_flag & brg_full)
 	count <= 0;
 // else if (iocs & ~iorw & (count!=9))
 else if (brg_full & buffer_full)
-	count = count + 1;
+	count <= count + 1;
 end
 	
 endmodule
