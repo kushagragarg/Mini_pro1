@@ -52,7 +52,8 @@ module spart(
 					.brg_full(brg_full),
 					.txd(txd),
 					.ioaddr(ioaddr),
-					.iorw(iorw)
+					.iorw(iorw),
+					.iocs(iocs)
 					);
 /*
 	receiver DUT_rx(.databus(rx_databus), 
