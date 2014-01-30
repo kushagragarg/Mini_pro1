@@ -71,16 +71,21 @@ module spart(
 	rx_tri_en = 1'b0;
 	status_tri_en = 1'b0;
 	clr_rda = 1'b0;
-
-		if (ioaddr == 2'b00 && iorw == 1'b1) begin
-			rx_tri_en = 1'b1;
-			clr_rda = 1'b1;
+		if (iocs) begin
+			if (ioaddr == 2'b00 && iorw == 1'b1) begin
+				rx_tri_en = 1'b1;
+				clr_rda = 1'b1;
+			end
+			if (ioaddr == 2'b01 && iorw == 1'b1) 
+				status_tri_en = 1'b1;
 		end
-		if (ioaddr == 2'b01 && iorw == 1'b1) 
-			status_tri_en = 1'b1;
+		else begin
+			rx_tri_en = 1'b0;
+			status_tri_en = 1'b0;
+		end
 	end
 
-	assign databus = rx_tri_en ? rx_databus : (status_tri_en ? {6'h00,tbr,rda}: 8'hzz); // Check format {000000,tbr,rda} or {tbr,rda,000000}
+	assign databus = rx_tri_en ? rx_databus : (status_tri_en ? {6'h00,tbr,rda}: 8'hzz); 
 
 	
 endmodule
