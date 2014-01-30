@@ -1,5 +1,23 @@
 `timescale 1ns / 1ps
-
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:   	30 Jan 2014
+// Design Name: 	SPART
+// Module Name:    	brg
+// Project Name: 	
+// Target Devices: 	Xilinx Virtex 5
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+// Baud Rate Generator
+//////////////////////////////////////////////////////////////////////////////////
 module brg(
 input [7:0] databus,
 input 		clk,rst,

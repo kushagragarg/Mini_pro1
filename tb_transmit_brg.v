@@ -1,4 +1,23 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:   	30 Jan 2014
+// Design Name: 	SPART
+// Module Name:    	transmit_tb [for both Transmitter and BRG]
+// Project Name: 	
+// Target Devices: 	Xilinx Virtex 5
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+// TestBench for Transmitter and BRG
+//////////////////////////////////////////////////////////////////////////////////
 
 module transmit_tb;
 reg clk, rst, iorw, iocs;
@@ -7,24 +26,24 @@ reg [7:0] databus;
 wire tbr, txd;
 
 transmit U0 (
-.clk  (clk),
-.rst  (rst),
-.brg_full (brg_full),
-.iorw (iorw),
-.iocs (iocs),
-.ioaddr (ioaddr),
-.databus (databus),
-.tbr (tbr),
-.txd (txd)
-);
+				.clk  (clk),
+				.rst  (rst),
+				.brg_full (brg_full),
+				.iorw (iorw),
+				.iocs (iocs),
+				.ioaddr (ioaddr),
+				.databus (databus),
+				.tbr (tbr),
+				.txd (txd)
+			);
 
-brg BRG(.clk(clk),
+brg BRG(		.clk(clk),
 				.rst(rst),
 				.ioaddr(ioaddr),
 				.databus(databus),
                 .brg_en(brg_en),
 				.brg_full(brg_full)
-				);
+		);
 
 initial
 begin
