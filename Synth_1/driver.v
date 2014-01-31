@@ -133,6 +133,7 @@ end
     begin
 		ioaddr <= 2'b10; // Div buffer low
 		iocs <= 1;
+		iorw <= 0;
 		databus_drive <= div_low; // condition based on input
 		ready_rw <= ready_rw + 1;
 		end
@@ -141,6 +142,7 @@ end
     begin
 		ioaddr <= 2'b11; // Div buffer low
 		iocs <= 1;
+		iorw <= 0;
 		databus_drive <= div_high; // condition based on input
 		ready_rw <= ready_rw + 1;
 		end
