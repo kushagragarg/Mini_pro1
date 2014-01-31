@@ -44,7 +44,7 @@ module spart(
 				.brg_full(brg_full),
 				.ioaddr(ioaddr)
 				);
-/*
+
 	transmit DUT_tx(.databus(databus),
 					.clk( clk),
 					.rst( rst),
@@ -55,7 +55,7 @@ module spart(
 					.iorw(iorw),
 					.iocs(iocs)
 					);
-*/
+
 
 	receiver DUT_rx(.DATABUS(rx_databus), 
 					.clk(clk), 

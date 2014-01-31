@@ -19,6 +19,7 @@ initial
 begin
 clk = 0;
 rst = 1;
+RX = 1;
 br_cfg = 2'b01;
 
 #40 rst = 0;
@@ -57,6 +58,6 @@ RX = 1;
 end
 
 always 
-#10 clk = ~clk;
+#5 clk = ~clk;
 
 endmodule
