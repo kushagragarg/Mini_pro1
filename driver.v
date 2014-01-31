@@ -45,14 +45,16 @@ module driver(
 	reg next_state;
 	reg [1:0] ready_rw;
 	reg [7:0] databus_drive;  // Data which will drive the bus
-
+    reg [7:0] databus_input;
 
 	reg [7:0] div_low;
 	reg [7:0] div_high;
 	
 
 // Read case, needs to be changed
-assign databus = databus_drive;
+assign databus =  (iorw == 0 & iocs == 1 ) ? databus_drive : 8'hzz;
+assign databus_input = databus;
+
 
 always @ (*) begin
 	case (br_cfg) 
