@@ -94,11 +94,11 @@ end
 	always @ (posedge clk)
 	begin
 	if(rst) begin
-	state <= #1 IDLE;
+	state <= IDLE;
 	
   end
 	else
-	state <= #1 next_state;
+	state <= next_state;
 	end
 	
 	
