@@ -103,7 +103,7 @@ end
 	
 
 	
-	always @(state or tbr)
+	always @(state or tbr or ready_rw)
 	begin
 	case(state)
 	IDLE : if ((tbr == 1) & (ready_rw == 2 ))

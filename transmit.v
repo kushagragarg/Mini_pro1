@@ -1,23 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:   	30 Jan 2014
-// Design Name: 	SPART
-// Module Name:    	transmit
-// Project Name: 	
-// Target Devices: 	Xilinx Virtex 5
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-// Transmitter 
-//////////////////////////////////////////////////////////////////////////////////
 module transmit( 
 clk,
 rst,
@@ -51,7 +31,7 @@ reg buffer_full;
 
 assign tbr = ~buffer_full;
 assign txd = piso[0];
-assign cnt_flag = (count == 9);
+assign cnt_flag = (count == 10);
 
 always @ (posedge clk)
 begin
@@ -94,7 +74,7 @@ always @ (posedge clk)
 begin
 if (rst)
 	buffer_full <= 1'b0;
-else if (cnt_flag)
+else if (cnt_flag & brg_full)
 	buffer_full <= 1'b0;
 else if (iocs & ~iorw & (ioaddr == 2'b0))
 	buffer_full <= 1'b1;
