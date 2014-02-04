@@ -105,7 +105,7 @@ end
 	
 	
 	
-
+// State machine transition logic
 	
 	always @(state or tbr or rda or ready_rw)
 	begin
@@ -156,7 +156,7 @@ end
 		ready_rw <= ready_rw + 1;
 		end
 
-// condition executed when both the div_buffer writes are done		
+// condition executed when both the div_buffer writes are done, outputs change based on current state		
 		else if ( ready_rw == 2 )
 			begin
 			ioaddr <= 2'b00; // To prevent writing to div buffer again
